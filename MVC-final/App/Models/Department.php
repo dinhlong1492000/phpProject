@@ -9,46 +9,31 @@ use Twig\Profiler\Profile;
 
 class Employee extends Model
 {
-    private $EmployeeId;
-    private $EmployeeCode;
-    private $EmployeeName;
-    private $DateOfBirth;
-    private $Gender;
-    private $IdentityNumber;
-    private $IdentityDate;
-    private $IdentityPlance;
-    private $Email;
-    private $PhoneNumber;
-    private $PositionName;
-    private $Address;
-    private $TelephoneNumber;
-    private $BackAccountNumber;
-    private $BankName;
-    private $BankProvinceName;
     private $DepartmentId;
+    private $DepartmentName;
     private $CreatedDate;
     private $CreatedBy;
     private $ModifiedDate;
     private $ModifiedBy;
+   
 
     public function __construct($data = [])
     {
-        // lấy cả khóa và mảng =>
         foreach ($data as $key => $value) {
             $this->$key = $value;
         };
     }
 
-    function getEmployeeId()
+    function getId()
     {
-        return $this->EmployeeId;
+        return $this->id;
     }
-    function setEmployeeId($id)
+    function setId($id)
     {
-        $this->EmployeeId = $id;
+        $this->id = $id;
     }
 
-    function getEmployeeCode()
+    function getName()
     {
         return $this->name;
     }
